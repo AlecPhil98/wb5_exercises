@@ -75,8 +75,10 @@ console.log(matchTitle.Title)
 
 // practice 3
 console.log("______________Practice 3______________________________________")
-let matchLess50 = courses.filter(function (Title) {
-    if (Title.Fee >"50") {
+
+// used a function with only within 
+let matchLess50 = courses.filter(function (dog) {
+    if (dog.Fee <= 50) {
         return true;
     }
     return false;
@@ -84,34 +86,22 @@ let matchLess50 = courses.filter(function (Title) {
 
 console.log(matchLess50);
 
+// old way to log with for loop
+for(let i = 0 ; i<matchLess50.length; i++){
+    console.log(`${matchLess50[i].Title}`)
+}
 
-// let products = [
-//     {product: "Gummy Worms", price: 5.79},
-//     {product: "Plain M&Ms", price: 2.89},
-//     {product: "Peanut M&Ms", price: 2.89},
-//     {product: "Swedish Fish", price: 3.79},
-//     {product: "Giant Chewy Nerds", price: 6.00},
-//     {product: "Snickers Bar", price: 1.89},
-//     {product: "Mounds Bar", price: 1.50},
-//     {product: "Sour Patch Kids", price: 3.79},
-//     {product: "Everlasting Gobstopper", price: .99},
-//     {product: "Ring Pop", price: 1.79}
-//  ];
+// New way to log with the "=>" function 
+matchLess50.forEach((dog)=>{
+    console.log(`${dog.Title} is 50 or less`)
+})
 
-//  let filteredProducts = products.filter(function(product){
-//     if(product.price < 2){
-//         return true;
-//     }
-//     return false;
-//  })
-
-//  console.log(filteredProducts);
 
 
 // practice 4
 console.log("_______________Practice 4_____________________________________")
 function bat(someValue) {
-    if (someValue.Location ==="Classroom 1") {
+    if (someValue.Location === "Classroom 1") {
         return true
     }
     else {
@@ -123,4 +113,8 @@ function bat(someValue) {
 let classmeet1 = courses.filter(bat);
 
 console.log(classmeet1)
+
+classmeet1.forEach((someValue)=>{
+    console.log(`${someValue.Title} is at location of classroom 1`)
+})
 
